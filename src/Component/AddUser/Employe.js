@@ -1,0 +1,43 @@
+const employe=[
+{
+    id:"1",
+    name:"Arjun",
+    lname:"chaudhary",
+    age:"27",
+    phone:"9800000000",
+    address:"Chitwan"
+},
+{
+    id:"2",
+    name:"Arjun",
+    lname:"chaudhary",
+    age:"27",
+    phone:"9800000000",
+    address:"Chitwan"
+}, 
+{
+    id:"3",
+    name:"Arjun",
+    lname:"chaudhary",
+    age:"27",
+    phone:"9800000000",
+    address:"Chitwan"
+},
+{
+    id:"4",
+    name:"Arjun",
+    lname:"chaudhary",
+    age:"27",
+    phone:"9800000000",
+    address:"Chitwan"
+},
+{
+    id:"5",
+    name:"Arjun",
+    lname:"chaudhary",
+    age:"27",
+    phone:"9800000000",
+    address:"Chitwan"
+},    
+]
+export default employe
