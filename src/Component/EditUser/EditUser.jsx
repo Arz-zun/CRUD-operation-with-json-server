@@ -1,16 +1,17 @@
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate ,useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditUser = () => {
   const navigate = useNavigate();
-const {id}=useParams();
+  const { id } = useParams();
 
   const [data, setData] = useState({
     name: "",
     username: "",
     email: "",
+    image: "",
     address: "",
   });
   const inputChange = (e) => {
@@ -23,13 +24,12 @@ const {id}=useParams();
     navigate("/showuser", { replace: true });
   };
 
-  const { name, username, email, address } = data;
-  
-  const loadUser= async()=>
-  {
-   const result=await axios.get(`http://localhost:3001/users/${id}` )
-   setData(result.data)
-  }
+  const { name, username, email, address,image } = data;
+
+  const loadUser = async () => {
+    const result = await axios.get(`http://localhost:3001/users/${id}`);
+    setData(result.data);
+  };
   useEffect(() => {
     loadUser();
   }, []);
@@ -58,6 +58,16 @@ const {id}=useParams();
             />
           </div>
           <div className="bg-transparent p-2">
+            Image :{" "}
+            <input
+              onChange={(e) => inputChange(e)}
+              type="text"
+              value={image}
+              name="username"
+              className="bg-transparent  border font-bold ml-3"
+            />
+          </div>
+          <div className="bg-transparent p-2">
             Email :{" "}
             <input
               onChange={(e) => inputChange(e)}
@@ -80,7 +90,7 @@ const {id}=useParams();
           <div>
             {" "}
             <button className="bg-blue-400 p-2 px-5 rounded-xl hover:bg-slate-900 hover:text-white">
-           update
+              update
             </button>
           </div>
         </form>

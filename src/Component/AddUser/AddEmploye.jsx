@@ -10,9 +10,13 @@ const AddEmploye = () => {
     name: "",
     username: "",
     email: "",
+    image:"",
+    description:"", 
+    image1:"",
     address: {
       city:"",
     },
+    password:"",
   });
   const inputChange = (e) => {
     console.log(e.target.value);
@@ -23,7 +27,7 @@ const AddEmploye = () => {
     await axios.post("http://localhost:3001/users", data);
     navigate("/showuser", { replace: true });
   };
-  const { name, username, email, address, } = data;
+  const { name, username, email, address,password, image,image1,description } = data;
   return (
     <section className="w-full items-center flex justify-center  mt-[12rem]">
       <article className="w-[50%] text-center h-auto item-center font-bold shadow-2xl ">
@@ -35,7 +39,7 @@ const AddEmploye = () => {
               type="text"
               name="name"
               required
-              value={data.name}
+              value={name}
               className="bg-transparent border font-bold ml-3"
             />
           </div>
@@ -44,7 +48,7 @@ const AddEmploye = () => {
             <input
               onChange={(e) => inputChange(e)}
               type="text"
-              value={data.username}
+              value={username}
               name="username"
               className="bg-transparent  border font-bold ml-3"
             />
@@ -54,20 +58,71 @@ const AddEmploye = () => {
             <input
               onChange={(e) => inputChange(e)}
               type="email"
-              required
-              value={data.email}
+              
+              value={email}
               name="email"
               className="bg-transparent  border font-bold ml-3"
             />
           </div>
+          <div className="bg-transparent p-2">
+            Password :{" "}
+            <input
+              onChange={(e) => inputChange(e)}
+              type="password"
+              
+              value={password}
+              name="password"
+              className="bg-transparent  border font-bold ml-3"
+            />
+          </div>
+          <div className="bg-transparent p-2">
+            Image :{" "}
+            <input
+              onChange={(e) => inputChange(e)}
+              type="text"
+              value={image}
+              name="image"
+              className="bg-transparent  border font-bold ml-3"
+            />
+          </div>
+          <div className="bg-transparent p-2">
+            Image1 :{" "}
+            <input
+              onChange={(e) => inputChange(e)}
+              type="file"
+              value={image1}
+              name="image1"
+              className="bg-transparent  border font-bold ml-3"
+            />
+          </div>
+          <div className="bg-transparent p-2">
+            Description :
+            <input
+              onChange={(e) => inputChange(e)}
+              type="text"
+              value={description}
+              name="description"
+              className="bg-transparent  border font-bold ml-3"
+            />
+          </div>
+          {/* <div className="bg-transparent p-2">
+            ImageFromfile :{" "}
+            <input
+              onChange={(e) => inputChange(e)}
+              type="file"
+            
+              value={image}
+              name="image"
+              className="bg-transparent  border font-bold ml-3"
+            />
+          </div> */}
           <div className="bg-transparent p-2">
             Address :{" "}
             <input
               onChange={(e) => inputChange(e)}
               type="text"
               name="address"
-              required
-              value={data.address.city}
+              value={address.city}
               className="bg-transparent  border font-bold ml-3"
             />
           </div>

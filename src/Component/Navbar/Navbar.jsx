@@ -13,8 +13,8 @@ const Navbar = () => {
     <article className='flex flex-wrap gap-3'>
         <Link className='p-3 hover:bg-black text-white' to="/showuser">Show Data</Link>
         <Link className='p-3 hover:bg-black text-white' to="/showuser/add">Add User</Link>
-        <a className='p-3 hover:bg-black text-white' href="">Home</a>
-        <a className='p-3 hover:bg-black text-white' href="">Home</a>
+        <Link className='p-3 hover:bg-black text-white' to="/login">Login</Link>
+        <Link className='p-3 hover:bg-black text-white' to="/newsfeed">Newsfeed</Link>
         <a className='p-3 hover:bg-black text-white' href="">Home</a>
         <a className='p-3 hover:bg-black text-white' href="">Home</a>
 

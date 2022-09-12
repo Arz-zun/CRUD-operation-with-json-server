@@ -12,6 +12,7 @@ const {id}=useParams();
     username: "",
     email: "",
     address: "",
+    password:""
   });
   const inputChange = (e) => {
     console.log(e.target.value);
@@ -23,7 +24,7 @@ const {id}=useParams();
 //     navigate("/showuser", { replace: true });
 //   };
 
-  const { name, username, email, address } = data;
+  const { name, username, email, address,password,image } = data;
   
   const loadUser= async()=>
   {
@@ -45,8 +46,16 @@ const {id}=useParams();
             username :<span className="ml-2">{username}</span> 
             
           </div>
+          <div className="bg-transparent p-2 text-center">
+           <img src={image} alt="" />
+            
+          </div>
           <div className="bg-transparent p-2">
             Email :<span className="ml-2">{email}</span> 
+            
+          </div>
+          <div className="bg-transparent p-2">
+            Password :<span className="ml-2">{password}</span> 
             
           </div>
           <div className="bg-transparent p-2">
