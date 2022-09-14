@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { MAIN_URL } from "../apiservices/url";
 
 const AddEmploye = () => {
   const navigate = useNavigate();
@@ -24,12 +25,14 @@ const AddEmploye = () => {
   };
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:3001/users", data);
+    await axios.post(MAIN_URL, data);
     navigate("/showuser", { replace: true });
   };
   const { name, username, email, address,password, image,image1,description } = data;
   return (
-    <section className="w-full items-center flex justify-center  mt-[12rem]">
+    <section className="mt-0 absolute h-[101vh] w-full z-[-1]">
+      <div className="relative mt-[5rem] w-full ">
+    <div className="w-full items-center flex justify-center ">
       <article className="w-[50%] text-center h-auto item-center font-bold shadow-2xl ">
         <form onSubmit={(e) => onSubmit(e)}>
           <div className="bg-transparent p-2">
@@ -128,12 +131,14 @@ const AddEmploye = () => {
           </div>
           <div>
             {" "}
-            <button className="bg-blue-400 p-2 px-5 rounded-xl hover:bg-slate-900 hover:text-white">
+            <button className="bg-blue-400 p-2 mb-3 px-5 rounded-xl hover:bg-slate-900 hover:text-white">
               Add
             </button>
           </div>
         </form>
       </article>
+    </div>
+    </div>
     </section>
   );
 };

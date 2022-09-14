@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import {MAIN_URL} from "../../Component/apiservices/url"
 
 const EditUser = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const EditUser = () => {
   };
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:3001/users/${id}`, data);
+    await axios.put(MAIN_URL+id, data);
     navigate("/showuser", { replace: true });
   };
 

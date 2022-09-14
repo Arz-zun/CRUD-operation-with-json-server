@@ -28,8 +28,8 @@ const LoginPage = () => {
       };
 
   return (
-    <>
-      <section className="w-full flex justify-center mt-[8%]">
+    <><section className="absolute w-full ">
+      <div className="w-full flex relative justify-center mt-[8%]">
         <form className="w-[50%] text-center align-middle shadow-xl">
           <div className="text-red-400 font-bold underline">Login Page</div>
         <div className="m-2 font-bold">Email: <input onChange={(e) => inputChange(e)}  className="rounded-xl pl-2 outline-red-600 "  placeholder="Enter Your User Name" name="username" type="email"  required/></div>
@@ -39,6 +39,7 @@ const LoginPage = () => {
         <button className="bg-blue-400 rounded-2xl p-1 font-bold text-red-600">Login</button>
         </div>
         </form>
+      </div>
       </section>
     </>
   );
